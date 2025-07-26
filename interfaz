@@ -1,0 +1,6 @@
+public interface UsuarioService {
+	void agregarUsuario(Usuario usuario);
+    void eliminarUsuario(String nombre);
+    Usuario buscarUsuario(String nombre);
+    void mostrarUsuarios();
+}
