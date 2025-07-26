@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioServiceImpl implements UsuarioService {
+    private List<Usuario> usuarios = new ArrayList<>();
+
+    public void agregarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
+        System.out.println("Usuario agregado: " + usuario.getNombre());
+    }
+
+    public void eliminarUsuario(String nombre) {
+        usuarios.removeIf(u -> u.getNombre().equalsIgnoreCase(nombre));
+        System.out.println("Usuario eliminado: " + nombre);
+    }
+
+    public Usuario buscarUsuario(String nombre) {
+        for (Usuario u : usuarios) {
+            if (u.getNombre().equalsIgnoreCase(nombre)) {
+                return u;
+            }
+        }
+        return null;
+    }
+
+    public void mostrarUsuarios() {
+        System.out.println("Lista de usuarios:");
+        for (Usuario u : usuarios) {
+            System.out.println(u);
+        }
+    }
+}
