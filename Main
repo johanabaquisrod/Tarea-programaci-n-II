@@ -1,0 +1,18 @@
+public class Main {
+	public static void main(String[] args) {
+        UsuarioService servicio = new UsuarioServiceImpl();
+
+        servicio.agregarUsuario(new Usuario("Ana", "ana@mail.com"));
+        servicio.agregarUsuario(new Usuario("Luis", "luis@mail.com"));
+
+        servicio.mostrarUsuarios();
+
+        Usuario buscado = servicio.buscarUsuario("Ana");
+        if (buscado != null) {
+            System.out.println("Encontrado: " + buscado);
+        }
+
+        servicio.eliminarUsuario("Luis");
+        servicio.mostrarUsuarios();
+    }
+}
